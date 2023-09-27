@@ -1,0 +1,22 @@
+<template>
+  <db-page :title='title'>
+    <db-view-module :title='data.name' type='2'>
+      <db-info-list :data='data' :options='infoOptions' labelWidth='136'></db-info-list>
+    </db-view-module>
+    <db-view-module title='会议室照片' type='2'>
+    </db-view-module>
+  </db-page>
+</template>
+
+<script>
+  import { reqDetail } from '@/apis/modules{{filePath}}.js' export default { data() { return { title: '{{title}}', data: {}, // 详情信息 infoOptions: [{ label:
+  '编号', prop: 'id' }, { label: '开启时间', prop: 'availableStart', format: (value, data) => (`${data.availableStart}~${data.availableFinish}`) }, { label:
+  '座位数', prop: 'seats', format: (value) => (`${value}人`) }, { label: '状态', prop: 'state', type: 'DbYesOrNo', options: { text: ['停用', '启用'] } }, {
+  label: '会议室地址', prop: 'address' }, { label: '描述', prop: 'description' } ] } }, mounted() { const { id } = this.$Route.query if (id) {
+  this.getDetail(id) return } this.$t.toast('没有id信息~') }, methods: { getDetail(id) { reqDetail({ id: id }).then(res => { if (res.code === 1) { this.data =
+  res.data } }) } } }
+</script>
+
+<style lang='scss' scoped>
+  .module-title { font-size: 32rpx; font-weight: bold; }
+</style>

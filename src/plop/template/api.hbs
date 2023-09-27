@@ -1,0 +1,5 @@
+// {{title}}
+import http from '@/uni_modules/firstui/fui-request' // 列表 export function reqList(data) { return http.post('/conference/room/getpagelist', { data: data }) }
+// 详情 export function reqDetail(data) { return http.post('/conference/room/get', { data: data }) } // 修改 export function reqUpdate(data) { return
+http.post('/conference/room/update', { data: data }) } // 新增 export function reqCreate(data) { return http.post('/conference/room/create', { data: data }) }
+// 删除 export function reqDelete(data) { return http.post('/conference/room/delete', { data: data }) }

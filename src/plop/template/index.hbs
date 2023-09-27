@@ -1,0 +1,34 @@
+<template>
+  <db-page-list title='{{title}}' :dataSource='dataSource'>
+    <template #default='{item}'>
+      <view class='room-item db-btn-white' @click='handlerItem(item)'>
+        <div class='room-item__left'>
+          <fui-lazyload src='../../../static/imgs/1.jpg' width='200' height='144' radius='6' mode='aspectFill'></fui-lazyload>
+        </div>
+        <div class='room-item__right'>
+          <view class='right__title'>
+            {{item.name}}
+          </view>
+          <view class='right__tags'>
+            <fui-tag :text='item.groupName' type='warning' theme='light' size='22' :padding="['4rpx', '8rpx']"></fui-tag>
+          </view>
+          <view class='right__time'>
+            开放时间 {{item.availableStart}}~{{item.availableFinish}}
+          </view>
+        </div>
+      </view>
+    </template>
+  </db-page-list>
+</template>
+
+<script>
+  import { reqList } from '@/apis/modules{{filePath}}.js' export default { data() { return { } }, methods: { // 数据源 dataSource(params) { return new
+  Promise((resolve, reject) => { reqList({ ...params }).then(res => { if (res.code === 1) { resolve(res.data.items) } reject() }) }) }, // 跳转详情页面
+  handlerItem(data) { this.$Router.push({ path: this.$Route.path.replace('/index', '/view/index'), query: { id: data.id } }) } } }
+</script>
+
+<style lang='scss' scoped>
+  .room-item { display: flex; margin: 0 24rpx; background-color: #fff; padding: 24rpx 24rpx; border-radius: 12rpx; box-shadow: $uni-shadow; margin-bottom:
+  24rpx; &__right { padding: 0 24rpx; .right__title { height: 68rpx; line-height: 1.1; @include textoverflow(2); } .right__tags { padding: 0 0 12rpx; }
+  .right__time { font-size: 24rpx; color: $uni-text-color-placeholder; } } }
+</style>

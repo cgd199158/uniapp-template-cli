@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "russell.any-rule",
+    "aaron-bond.better-comments",
+    "usernamehw.errorlens",
+    "dbaeumer.vscode-eslint",
+    "jbockle.jbockle-format-files",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "jasonnutter.search-node-modules",
+    "vue.volar",
+    "sdras.vue-vscode-snippets",
+    "wejectchan.vue3-snippets-for-vscode"
+  ]
+}

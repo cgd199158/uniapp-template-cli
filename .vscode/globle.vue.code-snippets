@@ -1,0 +1,78 @@
+{
+  "Print to vue2": {
+    "prefix": "vue2",
+    "body": [
+      "<template>\t",
+      "<div>\t",
+      "$2",
+      "</div>\t",
+      "</template>\t",
+      "\t",
+      "<script>\t",
+      "export default {\t",
+      "   name: '',\t",
+      "   components: {},\t",
+      "   data() {\t",
+      "       return {\t",
+      "            \t",
+      "       };\t",
+      "   },\t",
+      "   computed: {},\t",
+      "   watch: {}, \t",
+      "   // 可以访问当前this实例\t",
+      "   created() {},\t",
+      "   // 可以访问DOM元素\t",
+      "   mounted() {},\t",
+      "   methods: {}, \t",
+      "}\t",
+      "</script>\t",
+      "\t",
+      "<style scoped lang='scss'>\t",
+      "\t",
+      "</style>\t"
+    ],
+    "description": "vue2代码片段"
+  },
+  "Print to console": {
+    "prefix": "ll",
+    "body": ["console.log('========= $CLIPBOARD : ', $CLIPBOARD)"],
+    "description": "Log output to console"
+  },
+  "Print to fori": {
+    "prefix": "fori",
+    "body": ["// let result = []\t", "for (let i = 0; i < XXXXXXXXX.length; i++) {\t", "const itemObj = XXXXXXXXX[i]\t", "\t", "}\t"],
+    "description": "Log output to fori"
+  },
+  "Print to vue3": {
+    "prefix": "vue3",
+    "body": [
+      "<template>\t",
+      "\t",
+      "</template>\t",
+      "\t",
+      "<script setup lang='ts'>\t",
+      "\t",
+      "</script>\t",
+      "<style scoped lang='scss'>\t",
+      "\t",
+      "</style>\t"
+    ],
+    "description": "Log output to vue3"
+  },
+  "Print to map": {
+    "prefix": "mapEach",
+    "body": ["if ( Array.isArray($CLIPBOARD) && $CLIPBOARD.length > 0 ) {", "   $CLIPBOARD.map((item: Record<string, any>) => {", "       $1", "   })", "}"],
+    "description": "map遍历"
+  },
+  "Print to chunk": {
+    "scope": "javascript,typescript",
+    "prefix": "chunk",
+    "body": ["// ---------------------------- $1 start -------------------------", "// ---------------------------- $1 end ---------------------------"],
+    "description": "Log output to Print"
+  },
+  "Print to rc": {
+    "prefix": "rc",
+    "body": ["Record<string, any>"],
+    "description": "Record<string, any>"
+  }
+}
